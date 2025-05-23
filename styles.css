@@ -259,6 +259,10 @@ body {
     cursor: pointer;
     padding: 10px;
     margin-right: 15px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .nav-container {
