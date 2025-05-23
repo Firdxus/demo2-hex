@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo1.png" alt="Company Logo">
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>Home
+        </a>
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#products" class="dropbtn">Our Products</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Technology</a>
+                    <div class="dropdown-content">
+                        <a href="#">Technology 1</a>
+                        <a href="#">Technology 2</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Our Services</a>
+                    <div class="dropdown-content">
+                        <a href="#">Service 1</a>
+                        <a href="#">Service 2</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact Us</a>
+                    <div class="dropdown-content">
+                        <a href="#">Contact 1</a>
+                        <a href="#">Contact 2</a>
+                    </div>
+                </li>
+                <li class="login-item">
+                    <a href="#" class="dropbtn">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="content-image">
+            <img src="gambar1.png" alt="Main Content Image">
+        </div>
+        <div class="content-description">
+            <h2>Welcome to Hexphyre AI</h2>
+            <p>Hexphyre's AI-Driven Energy Efficiency Solution is designed to address the growing demand for sustainable energy management in businesses.</p>
+            <p>Using advanced algorithms and machine learning, our solution will provide real-time energy usage monitoring and optimization, 
+            allowing companies to identify inefficiencies and make data-driven decisions to reduce wastage.</p>
+        </div>
+    </div>
+
+    <div class="content products" id="products">
+        <div class="content-description">
+            <h2>Our Products</h2>
+            <p>Discover our innovative solutions designed to transform your business. Our cutting-edge products combine advanced technology with user-friendly interfaces to deliver exceptional results.</p>
+            <p>From AI-powered analytics to automated workflow solutions, we offer a comprehensive suite of tools to help you achieve your goals. Experience the future of technology with Hexphyre AI.</p>
+        </div>
+        <div class="content-image">
+            <img src="Office.png" alt="Products Image">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing the best service to our customers.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Hexphyre AI. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navContainer = document.querySelector('.nav-container');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navContainer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navContainer.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navContainer.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html> 
